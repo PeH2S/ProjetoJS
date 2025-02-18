@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>ISG003A</title>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            function obterPalindromo() {
+                let x = prompt("Digite uma palavra:").toLowerCase().replace(/\s/g, ''); // Remove espaços e converte para minúsculas
+                // trim() remove espaços em branco do início e do fim de uma string
+                if (x && x.trim() !== "") {
+                    let desejaVerificar = confirm("Deseja verificar se a palavra é um palíndromo?");
+                    if (desejaVerificar) {
+                        // split('') – Divide a string em um array de caracteres.
+                        // reverse() – Inverte a ordem dos elementos do array.
+                        // join('') – Junta os elementos do array de volta em uma string.
+                        let palavraInvertida = x.split('').reverse().join('');
+                        if (x === palavraInvertida) {
+                            alert(`"${x}" é um palíndromo!`);
+                        } else {
+                            alert(`"${x}" não é um palíndromo.`);
+                        }
+                    }
+                } else {
+                    alert("Nenhuma palavra foi digitada.");
+                }
+            }
+
+            obterPalindromo(); 
+        });
+
+
+    </script>
+
+</head>
+
+<body>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

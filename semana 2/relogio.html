@@ -13,15 +13,21 @@
     <title>ISG003A</title>
 
     <script>
-        function atualizarRelogio() {
-            let agora = new Date();
-            let horas = String(agora.getHours()).padStart(2, '0');
-            let minutos = String(agora.getMinutes()).padStart(2, '0');
-            let segundos = String(agora.getSeconds()).padStart(2, '0');
-            document.getElementById('relogio').textContent = `${horas}:${minutos}:${segundos}`;
-        }
+        document.addEventListener("DOMContentLoaded", ()=>{
+            function atualizarRelogio() {
+                let agora = new Date();
+                let horas = String(agora.getHours()).padStart(2, '0');
+                let minutos = String(agora.getMinutes()).padStart(2, '0');
+                let segundos = String(agora.getSeconds()).padStart(2, '0');
+                document.getElementById('relogio').textContent = `${horas}:${minutos}:${segundos}`;
 
-        setInterval(atualizarRelogio, 1000);
+                
+                setTimeout(atualizarRelogio, 1000);
+            }
+
+            // Inicia o relógio
+            atualizarRelogio();
+        });
     </script>
 
 </head>
@@ -29,18 +35,16 @@
 <body class="bg-light">
 
     <div class="container py-5">
-        <!-- Header -->
         <h1 class="fw-bold text-center text-dark mb-4">Semana 2: Exercícios de Lógica em JavaScript</h1>
 
-        <!-- List of items -->
         <ul class="list-group list-group-flush">
-            <li class="fw-bold fs-2 list-group-item border-0 mb-3 p-3 bg-dark text-white rounded text-center shadow-sm" id="relogio">
+            <li class="fw-bold fs-2 list-group-item border-0 mb-3 p-3 bg-dark text-white rounded text-center shadow-sm"
+                id="relogio">
                 <!-- O relógio será exibido aqui -->
             </li>
         </ul>
     </div>
 
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
