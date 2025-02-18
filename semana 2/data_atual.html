@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exerc 1</title>
+    <script type="text/javascript">
+        let data = new Date();
+
+        let dia = data.getDate();  // Obtém o dia (1 a 31)
+        let semana = data.getDay();  // Obtém o índice do dia da semana (0 a 6)
+        let ano = data.getFullYear(); // Obtém o ano atual, já somando 1900
+        let mes = data.getMonth(); // Obtém o índice do Mês
+
+        // Função para obter o nome do dia da semana
+        function obterDiaSemana(semana) {
+            switch (semana) {
+                case 0:
+                    return "Domingo";
+                case 1:
+                    return "Segunda-feira";
+                case 2:
+                    return "Terça-feira";
+                case 3:
+                    return "Quarta-feira";
+                case 4:
+                    return "Quinta-feira";
+                case 5:
+                    return "Sexta-feira";
+                case 6:
+                    return "Sábado";
+                default:
+                    return "Opção inválida"; 
+            }
+        }
+
+        function obterMes(mes) {
+            switch (semana) {
+                case 0:
+                    return "Janeiro";
+                case 1:
+                    return "Fevereiro";
+                case 2:
+                    return "Março";
+                case 3:
+                    return "Abril";
+                case 4:
+                    return "Maio";
+                case 5:
+                    return "Junho";
+                case 6:
+                    return "Julho";
+                case 7:
+                    return "Agosto";
+                case 8:
+                    return "Setembro";
+                case 9:
+                    return "Outubro";
+                case 10:
+                    return "Novembro";
+                case 11:
+                    return "Dezembro";
+                default:
+                    return "Opção inválida"; 
+            }
+        }
+
+        let nomeSemana = obterDiaSemana(semana); // Chama a função para obter o nome da semana
+        let nomeMes = obterMes(mes); // Chama a função para obter o nome do mês
+
+        // Exibe a data no formato: "Segunda-feira, 17 de Fevereiro de 2025"
+        document.write(`${nomeSemana}, ${dia} de ${nomeMes} de ${ano}`);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
