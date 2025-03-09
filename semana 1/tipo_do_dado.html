@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,14 +9,26 @@
         let dado = prompt("Digite um dado qualquer:");
         let confirmar = confirm("Deseja verificar o tipo do dado informado?");
 
-        if (confirmar) {
-            alert(`O tipo do dado informado é: ${typeof dado}`);
+        if (dado === null) { // Caso o usuário cancele a entrada
+            alert("Você não digitou nada.");
         } else {
-            alert("Obrigado por visitar esta página");
+            // Verificando se o dado pode ser convertido para número
+            if (!isNaN(dado) && dado.trim() !== "") {
+                dado = Number(dado); // Converte para número
+            }
+
+            if (confirmar) {
+                alert(`O tipo do dado informado é: ${typeof dado}`);
+            } else {
+                alert("Obrigado por visitar esta página.");
+            }
         }
+
     </script>
 </head>
+
 <body>
-    
+
 </body>
+
 </html>
