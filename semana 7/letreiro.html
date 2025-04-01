@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Letreiro Fatec</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        function Letreiro({ texto }) {
+            return <h1>{texto}</h1>;
+        }
+
+        const container = document.getElementById('root');
+        const root = ReactDOM.createRoot(container);
+        
+        let i = 0;
+        const frase = "Venha estudar na Fatec";
+
+        function digitar() {
+            if (i <= frase.length) {
+                root.render(<Letreiro texto={frase.substring(0, i)} />);
+                i++;
+                setTimeout(digitar, 100);
+            } else {
+                i = 0;
+                setTimeout(digitar, 1500);
+            }
+        }
+
+        digitar();
+    </script>
+</body>
+</html>
